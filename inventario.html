@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="google" content="notranslate">
+    <title>Inventario</title>
+
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="java script/script.js"></script>
+
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-12 header">
+            <h2>Registro de Productos</h2>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-3 menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li onclick="nuevopro()">Nuevo Producto</li>
+                <li onclick="verproductos()">Ver Productos</li>
+                <li onclick="eliminarprimer()">Eliminar primer Producto</li>
+                <li onclick="eliminarultimo()">Eliminar Ultimo Producto</li>
+                <li onclick="borrar()">Borra Lista de Productos</li>
+            </ul>
+        </div>
+
+        <div id="principal" class="col-9">
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-12 foot" id="inferior">
+            <h3 id="encabezado">MAV</h3>
+        </div>
+    </div>
+
+
+
+    <script>
+        var productos = [];
+        var princi = document.getElementById("principal");
+
+        var formulario = ` <form method="GET">
+                <fieldset>
+                    <legend>Datos del producto</legend>
+                    <div class="col-6">
+                    <div class="col-12">
+                    <label for="id">ID</label>
+                    <input type="number" id="id" required>
+                    </div>
+
+                    <div class="col-12">
+                    <label for="marca">Marca</label>
+                    <input type="text" id="marca" required>
+                    </div>
+
+                    <div class="col-12">
+                    <label for="tipo">Tipo</label>
+                    <input type="text" id="tipo" required>
+                    </div>
+
+                    <div class="col-12">
+                    <label for="modelo">Modelo</label>
+                    <input type="text" id="modelo" required>
+                    </div>
+
+                    <div class="col-12">
+                    <label for="precio">Precio</label>
+                    <input type="number" id="precio" required>
+                    </div>
+
+                    <div class="col-12">
+                    <button  type="reset" onclick="nuevoproducto()" class="btn button" >Enviar</button>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="imagenes/registro.jpg" alt=""> 
+                </div>
+
+                </fieldset>
+                
+            </form>`
+
+
+        var tablaproductos = `<input class="col-12" id="searchTerm" type="text" onkeyup="doSearch()" placeholder="Buscar..."/>      
+                <table class="col-12" id="tproductos">
+                    <tr>
+                        <th>N°</th><th>ID</th><th>Marca</th><th>Tipo</th><th>Modelo</th><th>Precio</th>
+                    </tr> 
+                </table>`
+    </script>
+
+
+</body>
+
+</html>
